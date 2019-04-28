@@ -36,11 +36,11 @@ def predict():
             pred = prediction_on_image(image)
             top1 = format_prediction(str(pred[0][1]))
             acc = str(pred[0][2])
-            return jsonify(prediction=top1, accuracy=acc), 400
+            return jsonify(prediction=top1, accuracy=acc), 200
 
-        return jsonify(kuk="liten")
+        return jsonify(tussar="liten")
     elif request.method == 'GET':
-        return jsonify(response="NEED TO DO POST"), 400
+        return jsonify(response="NEED TO DO POST"), 200
 
 @app.route('/test', methods=['GET','POST'])
 def test():
