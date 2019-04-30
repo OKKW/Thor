@@ -84,7 +84,7 @@ class NeuralNetwork:
                     input_img = input_img.resize((basewidth,hsize), Image.ANTIALIAS)                    
                                 
                 self.activations = np.round(np.squeeze(self.model.predict(np.expand_dims(preprocess_input(np.array(input_img)),axis=0))),2)
-                print(self.model)
+                
                 df = pd.DataFrame(np.vstack((np.array(list(self.name_id_map.keys())).astype(int),np.array(list(self.name_id_map.values())))).T,columns=['idx','species'])
                 df['activations'] = self.activations
                 df = df.sort_values(by=['activations'],ascending=False)
