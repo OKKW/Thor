@@ -77,7 +77,12 @@ class NeuralNetwork:
     def predict(self, input_img):
         with self.graph.as_default():
             with self.session.as_default():
-                
+                if input_img.size[0]!=224:
+                    basewidth=224
+                    wpercent = (basewidth/float(input_img.size[0]))
+                    hsize = int((float(input_img.size[1])*float(wpercent)))
+                    input_img = input_img.resize((basewidth,hsize), Image.ANTIALIAS)                    
+                                
                 self.activations = np.round(np.squeeze(self.model.predict(np.expand_dims(preprocess_input(np.array(input_img)),axis=0))),2)
                 print(self.model)
                 df = pd.DataFrame(np.vstack((np.array(list(self.name_id_map.keys())).astype(int),np.array(list(self.name_id_map.values())))).T,columns=['idx','species'])
