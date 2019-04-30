@@ -1,5 +1,4 @@
 keras
-tensorflow
 flask
 flask_cors
 gevent
