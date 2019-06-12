@@ -1,3 +1,12 @@
+# DogClassifier
+Me and a friend built a dog classification app for iOS and Android. 
+This code is a sample of my contribution. 
+
+I also build an API using an improved model which uses FastAPI and Gunicorn.
+
+
+
+
 Flask App 
 unicorn 
 post image
