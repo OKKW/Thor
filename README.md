@@ -1,7 +1,7 @@
 # DogClassifier
 Me and a friend built a dog classification app for iOS and Android. 
 This code is a sample of the API used in the app.
-
+<br>
 I also built a faster API using an improved model which uses FastAPI and Gunicorn, to be uploaded.
 
 
